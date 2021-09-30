@@ -57,10 +57,13 @@ var tekenAlles = function () {
 
   // speler
   fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-
+  rect(spelerX , spelerY , 15, 25);
+  fill("yellow");
+  ellipse(spelerX + 7, spelerY - 5, 10, 10);
+  fill("black")
+  rect(spelerX +7 , spelerY +15, 10, 15)
+  fill("black")
+  rect(spelerX +10, spelerY +15, 10, 15)
   // punten en health
 
 };
