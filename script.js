@@ -30,7 +30,20 @@ var beweegAlles = function  () {
   // kogel
 
   // speler
+ if (keyIsDown(40)){
+   spelerY+= 7;
+ }
   
+ if (keyIsDown(38)){
+   spelerY-= 7;
+ }
+ if (keyIsDown(37)){
+   spelerX-=7;
+ }
+ if (keyIsDown(39)){
+   spelerX+= 7;
+ }
+   clear();
 };
 
 /**
@@ -50,7 +63,7 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+background(51);
   // vijand
 
   // kogel
@@ -58,12 +71,12 @@ var tekenAlles = function () {
   // speler
   fill("white");
   rect(spelerX , spelerY , 15, 25);
-  fill("yellow");
+  fill("red");
   ellipse(spelerX + 7, spelerY - 5, 10, 10);
   fill("black")
-  rect(spelerX +7 , spelerY +15, 10, 15)
+  rect(spelerX +9 , spelerY +15, 6, 12)
   fill("black")
-  rect(spelerX +10, spelerY +15, 10, 15)
+  rect(spelerX , spelerY +15, 7, 12)
   // punten en health
 
 };
