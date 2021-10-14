@@ -17,6 +17,8 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
+var vijandX = 600; 
+var vijandY= 400;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -26,26 +28,30 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function  () {
   // vijand
-
+vijandY=vijandY + 3
+if (vijandY > 730){
+  vijandY = 0 ;}
   // kogel
 
   // speler
  if (keyIsDown(40)){
-   spelerY+= 7;
- }
-  
- if (keyIsDown(38)){
-   spelerY-= 7;
- }
+   spelerY+= 7;}
+  if (keyIsDown(38)){
+   spelerY-= 7;}
  if (keyIsDown(37)){
-   spelerX-=7;
- }
+   spelerX-=7;}
  if (keyIsDown(39)){
    spelerX+= 7;
  }
-   clear();
-};
-
+  if (spelerY < 10){
+     spelerY=10;}
+  if (spelerX < 0){
+     spelerX = 0;}
+  if (spelerY > 690){
+     spelerY=690;}
+  if (spelerX > 1260){
+      spelerX = 1260;}
+}
 /**
  * Checkt botsingen
  * Verwijdert neergeschoten vijanden
@@ -63,15 +69,18 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
+clear();
 background(51);
+// border: 10px; solid (blue);
   // vijand
-
+fill("blue");
+ellipse(vijandX, vijandY, 40, 40);
   // kogel
 
   // speler
   fill("white");
   rect(spelerX , spelerY , 15, 25);
-  fill("red");
+  fill("yellow");
   ellipse(spelerX + 7, spelerY - 5, 10, 10);
   fill("black")
   rect(spelerX +9 , spelerY +15, 6, 12)
