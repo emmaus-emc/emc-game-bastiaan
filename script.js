@@ -19,6 +19,8 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600; 
 var vijandY= 400;
+
+var HP= 10;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -89,6 +91,12 @@ ellipse(vijandX, vijandY, 40, 40);
   fill("black")
   rect(spelerX , spelerY +15, 7, 12)
   // punten en health
+ fill("white")
+ rect(1100, 30, 150, 50)
+
+fill("black")
+textSize(50);
+text(HP, 1150, 70);
 
 };
 
