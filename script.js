@@ -21,7 +21,7 @@ var vijandX = 600;
 var vijandY = 400;
 
 var HP = 100;
-var punten= 0;
+var punten= 1;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -75,8 +75,10 @@ var verwerkBotsing = function () {
     if (HP > 0) {
       HP = HP - 1;
     }
+  
     // botsing kogel tegen vijand
   }
+  punten= punten + 0.02;
 };
 
 /**
@@ -113,7 +115,7 @@ fill("grey")
 rect(1100, 80, 150,50)
 fill("black")
 textSize(50)
-text(punten, 1150, 120)
+text(floor(punten), 1150, 120)
 };
 
 /**
