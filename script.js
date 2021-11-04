@@ -17,10 +17,11 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 600; 
-var vijandY= 400;
+var vijandX = 600;
+var vijandY = 400;
 
-var HP= 10;
+var HP = 100;
+var punten= 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -28,31 +29,39 @@ var HP= 10;
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
-var beweegAlles = function  () {
+var beweegAlles = function () {
   // vijand
-vijandY=vijandY + 3
-if (vijandY > 730){
-  vijandY = 0 ;}
+  vijandY = vijandY + 3
+  if (vijandY > 730) {
+    vijandY = 0;
+  }
   // kogel
 
   // speler
- if (keyIsDown(40)){
-   spelerY+= 7;}
-  if (keyIsDown(38)){
-   spelerY-= 7;}
- if (keyIsDown(37)){
-   spelerX-=7;}
- if (keyIsDown(39)){
-   spelerX+= 7;
- }
-  if (spelerY < 10){
-     spelerY=10;}
-  if (spelerX < 0){
-     spelerX = 0;}
-  if (spelerY > 690){
-     spelerY=690;}
-  if (spelerX > 1260){
-      spelerX = 1260;}
+  if (keyIsDown(40)) {
+    spelerY += 7;
+  }
+  if (keyIsDown(38)) {
+    spelerY -= 7;
+  }
+  if (keyIsDown(37)) {
+    spelerX -= 7;
+  }
+  if (keyIsDown(39)) {
+    spelerX += 7;
+  }
+  if (spelerY < 10) {
+    spelerY = 10;
+  }
+  if (spelerX < 0) {
+    spelerX = 0;
+  }
+  if (spelerY > 690) {
+    spelerY = 690;
+  }
+  if (spelerX > 1260) {
+    spelerX = 1260;
+  }
 }
 /**
  * Checkt botsingen
@@ -61,11 +70,13 @@ if (vijandY > 730){
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if(vijandX - spelerX < 50  && vijandX - spelerX> -50 && vijandY - spelerY <50 && vijandY - spelerY >-50){
- console.log("botsing")
-}
-  // botsing kogel tegen vijand
-
+  if (vijandX - spelerX < 50 && vijandX - spelerX > -50 && vijandY - spelerY < 50 && vijandY - spelerY > -50) {
+    console.log("botsing")
+    if (HP > 0) {
+      HP = HP - 1;
+    }
+    // botsing kogel tegen vijand
+  }
 };
 
 /**
@@ -73,31 +84,36 @@ if(vijandX - spelerX < 50  && vijandX - spelerX> -50 && vijandY - spelerY <50 &&
  */
 var tekenAlles = function () {
   // achtergrond
-clear();
-background(51);
-// border: 10px; solid (blue);
+  clear();
+  background(51);
+  // border: 10px; solid (blue);
   // vijand
-fill("blue");
-ellipse(vijandX, vijandY, 40, 40);
+  fill("blue");
+  ellipse(vijandX, vijandY, 40, 40);
   // kogel
 
   // speler
   fill("white");
-  rect(spelerX , spelerY , 15, 25);
+  rect(spelerX, spelerY, 15, 25);
   fill("yellow");
   ellipse(spelerX + 7, spelerY - 5, 10, 10);
   fill("black")
-  rect(spelerX +9 , spelerY +15, 6, 12)
+  rect(spelerX + 9, spelerY + 15, 6, 12)
   fill("black")
-  rect(spelerX , spelerY +15, 7, 12)
+  rect(spelerX, spelerY + 15, 7, 12)
   // punten en health
- fill("white")
- rect(1100, 30, 150, 50)
 
+  fill("white")
+  rect(1100, 30, 150, 50)
+  fill("black")
+  textSize(50);
+  text(HP, 1150, 70);
+
+fill("grey")
+rect(1100, 80, 150,50)
 fill("black")
-textSize(50);
-text(HP, 1150, 70);
-
+textSize(50)
+text(punten, 1150, 120)
 };
 
 /**
