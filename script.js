@@ -122,9 +122,10 @@ text(floor(punten), 1150, 120)
  * return true als het gameover is
  * anders return false
  */
-var checkGameOver = function () {
-  return false;
-};
+
+
+
+
 
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
@@ -153,12 +154,18 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver()) {
+    if (HP<=0) {
+      
       spelStatus = GAMEOVER;
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
+ textSize(50);
+ background("white");
+ text("GAMEOVER", 520, 300);
+ 
 
   }
+
 }
