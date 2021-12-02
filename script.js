@@ -17,8 +17,16 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 600;
+var vijandX = 450;
 var vijandY = 400;
+
+var vijandX2 = 600;
+var vijandY2 = 400;
+
+var vijandX3= 750;
+var vijandY3= 400;
+
+var i= 0;
 
 var HP = 100;
 var punten= 1;
@@ -34,6 +42,14 @@ var beweegAlles = function () {
   vijandY = vijandY + 3
   if (vijandY > 730) {
     vijandY = 0;
+  }
+  vijandY2 = vijandY2 + 3
+    if (vijandY2 > 730) {
+      vijandY2 = 0;
+  }
+  vijandY3 = vijandY3 + 3
+  if (vijandY3 > 730) {
+    vijandY3 = 0;
   }
   // kogel
 
@@ -70,14 +86,21 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
+
   if (vijandX - spelerX < 50 && vijandX - spelerX > -50 && vijandY - spelerY < 50 && vijandY - spelerY > -50) {
     console.log("botsing")
-    if (HP > 0) {
-      HP = HP - 1;
-    }
-  
-    // botsing kogel tegen vijand
+    HP = HP - 1;
   }
+  if (vijandX2 - spelerX < 50 && vijandX2 - spelerX > -50 && vijandY2 - spelerY < 50 && vijandY2 - spelerY > -50) {
+    console.log("botsing")
+    HP = HP - 1;
+  }
+  if (vijandX3 - spelerX < 50 && vijandX3 - spelerX > -50 && vijandY3 - spelerY < 50 && vijandY3 - spelerY > -50) {
+    console.log("botsing")
+    HP = HP - 1;
+  }
+}
+    // botsing kogel tegen vijand
   punten= punten + 0.02;
 };
 
@@ -88,10 +111,15 @@ var tekenAlles = function () {
   // achtergrond
   clear();
   background(51);
-  // border: 10px; solid (blue);
+  
   // vijand
+
   fill("blue");
   ellipse(vijandX, vijandY, 40, 40);
+  fill("blue");
+  ellipse(vijandX2, vijandY2, 40, 40);
+  fill("blue");
+  ellipse(vijandX3, vijandY3, 40, 40);
   // kogel
 
   // speler
