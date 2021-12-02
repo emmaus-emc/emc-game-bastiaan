@@ -86,18 +86,12 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+  for (var i=0; i < 8; i++){
+    vijandX = i * 200;
   if (vijandX - spelerX < 50 && vijandX - spelerX > -50 && vijandY - spelerY < 50 && vijandY - spelerY > -50) {
     console.log("botsing")
     HP = HP - 1;
   }
-  if (vijandX2 - spelerX < 50 && vijandX2 - spelerX > -50 && vijandY2 - spelerY < 50 && vijandY2 - spelerY > -50) {
-    console.log("botsing")
-    HP = HP - 1;
-  }
-  if (vijandX3 - spelerX < 50 && vijandX3 - spelerX > -50 && vijandY3 - spelerY < 50 && vijandY3 - spelerY > -50) {
-    console.log("botsing")
-    HP = HP - 1;
   }
 
     // botsing kogel tegen vijand
@@ -113,13 +107,14 @@ var tekenAlles = function () {
   background(51);
   
   // vijand
+for (var i=0; i < 8; i++){
+  vijandX = i * 200;
 
   fill("blue");
   ellipse(vijandX, vijandY, 40, 40);
-  fill("blue");
-  ellipse(vijandX2, vijandY2, 40, 40);
-  fill("blue");
-  ellipse(vijandX3, vijandY3, 40, 40);
+
+
+}
   // kogel
 
   // speler
