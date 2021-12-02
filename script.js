@@ -99,7 +99,7 @@ var verwerkBotsing = function () {
     console.log("botsing")
     HP = HP - 1;
   }
-}
+
     // botsing kogel tegen vijand
   punten= punten + 0.02;
 };
