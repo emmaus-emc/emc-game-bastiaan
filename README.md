@@ -46,7 +46,7 @@ Optioneel: extra onderdelen, je kunt die overslaan<br>
     Verander de code zodat er een loop gebruikt wordt
 - [x] 15. maak 8 vijanden op een rij met een loop
         - Verander het aantal keer dat de loop wordt herhaald
-- [x] 16. optioneel: maak 8 vijanden op willekeurige plekken met een loop en array
+- [] 16. optioneel: maak 8 vijanden op willekeurige plekken met een loop en array
 - [x] 17. tekenKogel ergens
 - [x] 18. zet kogel bij speler als spatie wordt ingedrukt
 - [ ] 19. beweegKogel omhoog
