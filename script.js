@@ -57,15 +57,13 @@ var beweegAlles = function () {
   }
   // kogel
 
-  if (keyIsDown(32)) {
-    kogelX =spelerX + 6
-  }
-  if (keyIsDown(32)) {
-    kogelY = spelerY 
-  }
-  if (keyIsDown(32)) {
-    kogelX = spelerX
-  }
+  if (keyIsDown(32)) 
+  {kogelX = spelerX + 5 }
+  if (keyIsDown(32)) 
+  {kogelY = spelerY}
+
+  kogelY = kogelY - 5;
+  
  
   // speler
   if (keyIsDown(40)) {
