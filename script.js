@@ -30,6 +30,10 @@ var i= 0;
 
 var HP = 100;
 var punten= 1;
+
+var kogelX = 700;
+var kogelY = 700;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -53,6 +57,16 @@ var beweegAlles = function () {
   }
   // kogel
 
+  if (keyIsDown(32)) {
+    kogelX =spelerX + 6
+  }
+  if (keyIsDown(32)) {
+    kogelY = spelerY 
+  }
+  if (keyIsDown(32)) {
+    kogelX = spelerX
+  }
+ 
   // speler
   if (keyIsDown(40)) {
     spelerY += 7;
@@ -117,6 +131,8 @@ for (var i=0; i < 8; i++){
 }
   // kogel
 
+  fill ("black")
+  ellipse(kogelX, kogelY, 20,20 )
   // speler
   fill("white");
   rect(spelerX, spelerY, 15, 25);
